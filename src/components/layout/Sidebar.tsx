@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { Package2, Box, Settings, Database, ChevronRight } from 'lucide-react';
 import { useAuthStore } from '../../stores/authStore';
 
@@ -7,6 +7,7 @@ interface MenuItem {
   id: string;
   label: string;
   icon: React.ReactNode;
+  menuPath: string;
   subItems: { id: string; label: string; path: string }[];
 }
 
@@ -15,6 +16,7 @@ const menuItems: MenuItem[] = [
     id: 'parts',
     label: '部品',
     icon: <Package2 className="w-5 h-5" />,
+    menuPath: '/parts/menu',
     subItems: [
       { id: 'parts-order', label: '部品受注登録', path: '/parts/order' },
       { id: 'parts-inventory', label: '在庫管理', path: '/parts/inventory' },
@@ -24,6 +26,7 @@ const menuItems: MenuItem[] = [
     id: 'products',
     label: '製品',
     icon: <Box className="w-5 h-5" />,
+    menuPath: '/products/menu',
     subItems: [
       { id: 'products-assembly', label: '製品組立', path: '/products/assembly' },
       { id: 'products-shipping', label: '出荷管理', path: '/products/shipping' },
@@ -33,6 +36,7 @@ const menuItems: MenuItem[] = [
     id: 'common',
     label: '共通',
     icon: <Settings className="w-5 h-5" />,
+    menuPath: '/common/menu',
     subItems: [
       { id: 'common-reports', label: 'レポート', path: '/common/reports' },
       { id: 'common-settings', label: '設定', path: '/common/settings' },
@@ -42,6 +46,7 @@ const menuItems: MenuItem[] = [
     id: 'master',
     label: 'マスタ',
     icon: <Database className="w-5 h-5" />,
+    menuPath: '/master/menu',
     subItems: [
       { id: 'master-users', label: 'ユーザー管理', path: '/master/users' },
       { id: 'master-items', label: '品目管理', path: '/master/items' },
@@ -52,6 +57,11 @@ const menuItems: MenuItem[] = [
 export default function Sidebar() {
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
   const logout = useAuthStore((state) => state.logout);
+  const navigate = useNavigate();
+
+  const handleMenuClick = (menuPath: string) => {
+    navigate(menuPath);
+  };
 
   return (
     <div className="w-64 bg-white border-r border-gray-200 min-h-screen">
@@ -62,7 +72,10 @@ export default function Sidebar() {
         {menuItems.map((item) => (
           <div key={item.id}>
             <button
-              onClick={() => setExpandedItem(expandedItem === item.id ? null : item.id)}
+              onClick={() => {
+                setExpandedItem(expandedItem === item.id ? null : item.id);
+                handleMenuClick(item.menuPath);
+              }}
               className="w-full flex items-center justify-between px-4 py-2 text-gray-700 hover:bg-gray-50"
             >
               <div className="flex items-center gap-2">

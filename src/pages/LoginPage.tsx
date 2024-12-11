@@ -11,14 +11,14 @@ export default function LoginPage() {
   const { login, isAuthenticated } = useAuthStore();
 
   if (isAuthenticated) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/parts/menu" replace />;
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       await login(userId, password);
-      navigate('/');
+      navigate('/parts/menu');
     } catch (err) {
       setError('ログインに失敗しました。');
     }
