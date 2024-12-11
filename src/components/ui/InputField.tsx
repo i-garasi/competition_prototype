@@ -1,13 +1,14 @@
 import React from 'react';
 
 interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
-  label: string;
+  label?: string;
   name: string;
   required?: boolean;
   suffix?: React.ReactNode;
   helperText?: string;
   multiline?: boolean;
   rows?: number;
+  hideLabel?: boolean;
 }
 
 export function InputField({
@@ -18,17 +19,20 @@ export function InputField({
   helperText,
   multiline,
   rows = 3,
+  hideLabel = false,
   ...props
 }: InputFieldProps) {
-  const inputClasses = "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm";
+  const inputClasses = "block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm";
   
   return (
     <div>
-      <label htmlFor={name} className="block text-sm font-medium text-gray-700">
-        {label}
-        {required && <span className="text-red-500 ml-1">*</span>}
-      </label>
-      <div className="relative mt-1">
+      {!hideLabel && label && (
+        <label htmlFor={name} className="block text-sm font-medium text-gray-700">
+          {label}
+          {required && <span className="text-red-500 ml-1">*</span>}
+        </label>
+      )}
+      <div className="relative">
         {multiline ? (
           <textarea
             id={name}
