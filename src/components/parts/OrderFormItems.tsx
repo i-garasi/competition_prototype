@@ -49,7 +49,7 @@ const initialItems: OrderItem[] = [
 export default function OrderFormItems() {
   return (
     <div className="border rounded">
-      <div className="max-h-80 overflow-y-auto overflow-x-auto">
+      <div className="max-h-80 overflow-y-auto">
         <table className="w-full text-sm">
           <thead className="bg-gray-50 sticky top-0">
             <tr>
