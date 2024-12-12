@@ -1,116 +1,103 @@
-import React from 'react';
-import { SelectField } from '../ui/SelectField';
-import { InputField } from '../ui/InputField';
+import React from "react";
+import { SelectField } from "../ui/SelectField";
+import { InputField } from "../ui/InputField";
 
 const orderMethods = [
-  { value: '1', label: '電話' },
-  { value: '2', label: 'FAX' },
-  { value: '3', label: 'メール' },
+  { value: "1", label: "電話" },
+  { value: "2", label: "FAX" },
+  { value: "3", label: "メール" },
 ];
 
 const offices = [
-  { value: '110', label: '110: 北海道営業所' },
-  { value: '120', label: '120: 東北営業所' },
-  { value: '130', label: '130: 関東営業所' },
+  { value: "110", label: "110: 北海道営業所" },
+  { value: "120", label: "120: 東北営業所" },
+  { value: "130", label: "130: 関東営業所" },
 ];
 
 const shippingPoints = [
-  { value: '010', label: '010: 本社物流センター' },
-  { value: '020', label: '020: 東日本物流センター' },
-  { value: '030', label: '030: 西日本物流センター' },
+  { value: "010", label: "010: 本社物流センター" },
+  { value: "020", label: "020: 東日本物流センター" },
+  { value: "030", label: "030: 西日本物流センター" },
 ];
 
 export default function OrderFormHeader() {
   return (
-    <div className="grid grid-cols-3 gap-6">
-      <div className="space-y-4">
-        <div>
-          <label htmlFor="orderNumber" className="block text-sm font-medium text-gray-700 mb-1">
-            受注番号
-          </label>
+    <>
+      <div className="grid grid-cols-12 items-center gap-6">
+        <div className="col-span-3">
           <InputField
+            label="受注番号"
             id="orderNumber"
             name="orderNumber"
             defaultValue="5438-0342"
+            labelWidth="w-[100px]"
             required
-            hideLabel
           />
         </div>
-        <div>
-          <label htmlFor="orderMethod" className="block text-sm font-medium text-gray-700 mb-1">
-            受注方法
-          </label>
+        <div className="col-span-3">
           <SelectField
+            label="受注方法"
             id="orderMethod"
             name="orderMethod"
+            labelWidth="w-[100px]"
             required
             options={orderMethods}
             defaultValue="1"
-            hideLabel
           />
         </div>
-      </div>
-
-      <div className="space-y-4">
-        <div>
-          <label htmlFor="representativeCode" className="block text-sm font-medium text-gray-700 mb-1">
-            担当者コード
-          </label>
-          <div className="flex gap-2">
+        <div className="col-span-6">
+          <div className="flex items-center space-x-2">
             <InputField
+              label="担当者コード"
               id="representativeCode"
               name="representativeCode"
+              labelWidth="w-[170px]"
               required
               defaultValue="1408"
-              hideLabel
             />
-            <button className="px-2 py-2 bg-gray-100 rounded text-sm h-[38px]">検索</button>
-            <span className="py-2 text-sm">八幡 圭祐</span>
+            <button className="px-2 py-1 bg-gray-100 rounded text-sm h-[26px]">
+              検索
+            </button>
+            <span className="text-sm">テストユーザー</span>
           </div>
-        </div>
-        <div>
-          <label htmlFor="officeCode" className="block text-sm font-medium text-gray-700 mb-1">
-            営業所コード
-          </label>
-          <SelectField
-            id="officeCode"
-            name="officeCode"
-            required
-            options={offices}
-            defaultValue="110"
-            hideLabel
-          />
         </div>
       </div>
 
-      <div className="space-y-4">
-        <div>
-          <label htmlFor="regionCode" className="block text-sm font-medium text-gray-700 mb-1">
-            地域コード
-          </label>
+      <div className="grid grid-cols-12 gap-6">
+        <div className="col-span-3">
           <SelectField
-            id="regionCode"
-            name="regionCode"
+            label="営業所コード"
+            id="officeCode"
+            name="officeCode"
+            labelWidth="w-[170px]"
             required
             options={offices}
             defaultValue="110"
-            hideLabel
           />
         </div>
-        <div>
-          <label htmlFor="shippingPoint" className="block text-sm font-medium text-gray-700 mb-1">
-            出荷拠点
-          </label>
+        <div className="col-span-3">
           <SelectField
+            label="出荷拠点"
             id="shippingPoint"
             name="shippingPoint"
+            labelWidth="w-[100px]"
             required
             options={shippingPoints}
             defaultValue="010"
-            hideLabel
+          />
+        </div>
+        <div className="col-span-3">
+          <SelectField
+            label="地域コード"
+            id="regionCode"
+            name="regionCode"
+            labelWidth="w-[130px]"
+            required
+            options={offices}
+            defaultValue="110"
           />
         </div>
       </div>
-    </div>
+    </>
   );
 }

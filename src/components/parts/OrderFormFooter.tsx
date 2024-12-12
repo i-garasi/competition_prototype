@@ -1,95 +1,89 @@
-import React from 'react';
-import { InputField } from '../ui/InputField';
+import React from "react";
+import { InputField } from "../ui/InputField";
 
 export default function OrderFormFooter() {
   return (
     <div className="space-y-4">
       <div className="grid grid-cols-12 gap-4 items-center">
-        <div className="col-span-2 text-sm font-medium text-gray-700">税抜売上</div>
         <div className="col-span-2">
           <InputField
+            label="税抜売上"
             name="subtotal"
             defaultValue="6,937"
+            labelWidth="w-[100px]"
             disabled
-            hideLabel
           />
         </div>
-        <div className="col-span-2 text-sm font-medium text-gray-700">消費税</div>
         <div className="col-span-2">
           <InputField
+            label="消費税"
             name="tax"
             defaultValue="555"
+            labelWidth="w-[80px]"
             disabled
-            hideLabel
           />
         </div>
-        <div className="col-span-1 flex items-center">
+        <div className="col-span-2 flex items-center">
           <span className="text-sm">税率</span>
           <span className="ml-2">0.08</span>
         </div>
-      </div>
 
-      <div className="grid grid-cols-12 gap-4 items-center">
-        <div className="col-span-2 text-sm font-medium text-gray-700">税込売上</div>
         <div className="col-span-2">
           <InputField
+            label="税込売上"
             name="totalWithTax"
             defaultValue="7,492"
+            labelWidth="w-[100px]"
             disabled
-            hideLabel
           />
         </div>
-        <div className="col-span-2 text-sm font-medium text-gray-700">代引手数料</div>
         <div className="col-span-2">
           <InputField
+            label="代引手数料"
             name="codFee"
             defaultValue="0"
+            labelWidth="w-[130px]"
             disabled
-            hideLabel
           />
         </div>
-        <div className="col-span-2 text-sm font-medium text-gray-700">総合計</div>
         <div className="col-span-2">
           <InputField
+            label="総合計"
             name="grandTotal"
             defaultValue="7,492"
+            labelWidth="w-[80px]"
             disabled
-            hideLabel
           />
         </div>
       </div>
 
       <div className="grid grid-cols-12 gap-4 items-center">
-        <div className="col-span-2 text-sm font-medium text-gray-700">社外コメント</div>
-        <div className="col-span-10">
+        <div className="col-span-7">
           <InputField
+            label="社外コメント"
             name="externalComments"
             multiline
-            rows={2}
-            hideLabel
+            rows={1}
           />
         </div>
       </div>
 
       <div className="grid grid-cols-12 gap-4 items-center">
-        <div className="col-span-2 text-sm font-medium text-gray-700">特別売上理由</div>
-        <div className="col-span-10">
+        <div className="col-span-7">
           <InputField
+            label="特別売上理由"
             name="specialSalesReason"
             multiline
-            rows={2}
-            hideLabel
+            rows={1}
           />
         </div>
-      </div>
 
-      <div className="grid grid-cols-12 gap-4 items-center">
-        <div className="col-span-2 text-sm font-medium text-gray-700">納期回答先FAX番号</div>
-        <div className="col-span-4">
+        <div className="col-span-5">
           <InputField
+            label="納期回答先FAX番号"
             name="billingFax"
             defaultValue="01652-7-2769"
-            hideLabel
+            labelWidth="w-[200px]"
           />
         </div>
       </div>

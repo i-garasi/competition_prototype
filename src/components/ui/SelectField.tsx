@@ -10,6 +10,7 @@ interface SelectFieldProps extends React.SelectHTMLAttributes<HTMLSelectElement>
   name: string;
   options: Option[];
   required?: boolean;
+  labelWidth?: string;
   hideLabel?: boolean;
 }
 
@@ -18,14 +19,15 @@ export function SelectField({
   name,
   options,
   required,
+  labelWidth = 'w-1/4',
   hideLabel = false,
   className = '',
   ...props
 }: SelectFieldProps) {
   return (
-    <div className={className}>
+    <div className={`flex items-center ${className}`}>
       {!hideLabel && label && (
-        <label htmlFor={name} className="block text-sm font-medium text-gray-700">
+        <label htmlFor={name} className={`text-sm font-medium text-gray-700 ${labelWidth}`}>
           {label}
           {required && <span className="text-red-500 ml-1">*</span>}
         </label>

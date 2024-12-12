@@ -8,6 +8,7 @@ interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement | H
   helperText?: string;
   multiline?: boolean;
   rows?: number;
+  labelWidth?: string;
   hideLabel?: boolean;
 }
 
@@ -19,43 +20,47 @@ export function InputField({
   helperText,
   multiline,
   rows = 3,
+  labelWidth = 'w-1/4',
   hideLabel = false,
   ...props
 }: InputFieldProps) {
-  const inputClasses = "block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm";
-  
+  const inputClasses =
+    "block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm";
+
   return (
     <div>
-      {!hideLabel && label && (
-        <label htmlFor={name} className="block text-sm font-medium text-gray-700">
-          {label}
-          {required && <span className="text-red-500 ml-1">*</span>}
-        </label>
-      )}
-      <div className="relative">
-        {multiline ? (
-          <textarea
-            id={name}
-            name={name}
-            rows={rows}
-            className={inputClasses}
-            {...props}
-          />
-        ) : (
-          <div className="flex">
-            <input
+      <div className="flex items-center">
+        {!hideLabel && label && (
+          <label htmlFor={name} className={`text-sm font-medium text-gray-700 ${labelWidth}`}>
+            {label}
+            {required && <span className="text-red-500 ml-1">*</span>}
+          </label>
+        )}
+        <div className="relative w-full">
+          {multiline ? (
+            <textarea
               id={name}
               name={name}
-              className={`${inputClasses} ${suffix ? 'rounded-r-none' : ''}`}
+              rows={rows}
+              className={inputClasses}
               {...props}
             />
-            {suffix && (
-              <div className="inline-flex items-center px-3 rounded-r-md border border-l-0 border-gray-300 bg-gray-50">
-                {suffix}
-              </div>
-            )}
-          </div>
-        )}
+          ) : (
+            <div className="flex">
+              <input
+                id={name}
+                name={name}
+                className={`${inputClasses} ${suffix ? "rounded-r-none" : ""}`}
+                {...props}
+              />
+              {suffix && (
+                <div className="inline-flex items-center px-3 rounded-r-md border border-l-0 border-gray-300 bg-gray-50">
+                  {suffix}
+                </div>
+              )}
+            </div>
+          )}
+        </div>
       </div>
       {helperText && (
         <p className="mt-1 text-sm text-gray-500">{helperText}</p>
