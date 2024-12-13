@@ -1,6 +1,6 @@
-import React from 'react';
-import { SelectField } from '../ui/SelectField';
-import { InputField } from '../ui/InputField';
+import React from "react";
+import { SelectField } from "../ui/SelectField";
+import { InputField } from "../ui/InputField";
 
 export default function OrderFormDelivery() {
   return (
@@ -13,7 +13,7 @@ export default function OrderFormDelivery() {
             type="date"
             labelWidth="w-[80px]"
             required
-            defaultValue="2015/04/23"
+            defaultValue="2024-12-23"
           />
         </div>
         <div className="col-span-3">
@@ -22,7 +22,7 @@ export default function OrderFormDelivery() {
             name="shippingDate"
             type="date"
             labelWidth="w-[120px]"
-            defaultValue="2015/04/23"
+            defaultValue="2024-12-23"
           />
         </div>
         <div className="col-span-3">
@@ -31,9 +31,8 @@ export default function OrderFormDelivery() {
             name="priceDisplay"
             labelWidth="w-[210px]"
             required
-            options={[
-              { value: '1', label: '表示' },
-            ]}
+            options={[{ value: "1", label: "1: 表示" }]}
+            defaultValue="1"
           />
         </div>
         <div className="col-span-3">
@@ -48,16 +47,39 @@ export default function OrderFormDelivery() {
       </div>
 
       <div className="grid grid-cols-12 gap-4 items-end">
-        <div className="col-span-3">
-          <SelectField
-            label="運賃内容"
-            name="freightContent"
+        <div className="col-span-4">
+          <div className="flex items-center space-x-2">
+            <SelectField
+              label="運賃内容"
+              name="freightContent"
+              labelWidth="w-[120px]"
+              required
+              options={[
+                { value: "1", label: "1: 立替" },
+                { value: "2", label: "2: 送付" },
+              ]}
+              defaultValue="1"
+            />
+            <SelectField
+              label="運賃内容"
+              name="freightContent"
+              labelWidth="w-[120px]"
+              required
+              options={[
+                { value: "1", label: "1: 立替" },
+                { value: "2", label: "2: 送付" },
+              ]}
+              defaultValue="2"
+              hideLabel
+            />
+          </div>
+        </div>
+        <div className="col-span-2">
+          <InputField
+            label="立替運賃"
+            name="freightCost"
             labelWidth="w-[100px]"
-            required
-            options={[
-              { value: '1', label: '立替' },
-              { value: '2', label: '送付' },
-            ]}
+            defaultValue="0"
           />
         </div>
         <div className="col-span-3">
@@ -65,19 +87,16 @@ export default function OrderFormDelivery() {
             label="便名"
             name="shipmentName"
             required
-            options={[
-              { value: '01', label: '第一便' },
-            ]}
+            options={[{ value: "1", label: "01: 第一貨物" }]}
+            defaultValue="1"
           />
         </div>
         <div className="col-span-3">
           <SelectField
-            label="直送区分"
+            label="直扱い"
             name="directDeliveryType"
             labelWidth="w-[100px]"
-            options={[
-              { value: '0', label: '通常' },
-            ]}
+            options={[{ value: "0", label: "通常" }]}
           />
         </div>
       </div>
@@ -99,11 +118,7 @@ export default function OrderFormDelivery() {
           />
         </div>
         <div className="col-span-3">
-          <InputField
-            label="指図日"
-            name="instructionDate"
-            type="date"
-          />
+          <InputField label="指図日" name="instructionDate" type="date" />
         </div>
         <div className="col-span-3">
           <InputField

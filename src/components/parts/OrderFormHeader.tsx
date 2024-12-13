@@ -66,6 +66,17 @@ export default function OrderFormHeader() {
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-3">
           <SelectField
+            label="伝票区分"
+            id="orderSection"
+            name="orderSection"
+            labelWidth="w-[100px]"
+            required
+            options={[{ value: "1", label: "1: 通常売上" }]}
+            defaultValue="1"
+          />
+        </div>
+        <div className="col-span-3">
+          <SelectField
             label="営業所コード"
             id="officeCode"
             name="officeCode"

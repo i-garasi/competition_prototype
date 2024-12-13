@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface OrderItem {
   id: number;
@@ -44,6 +44,20 @@ const initialItems: OrderItem[] = [
     changeInfo: "変更なし",
     model: "XYZ-789",
   },
+  {
+    id: 3,
+    name: "",
+    code: "",
+    quantity: 0,
+    orderRemaining: 0,
+    allocated: 0,
+    unitPrice: 0,
+    amount: 0,
+    tax: 0,
+    stock: 0,
+    changeInfo: "",
+    model: "",
+  },
 ];
 
 export default function OrderFormItems() {
@@ -68,13 +82,24 @@ export default function OrderFormItems() {
           </thead>
           <tbody>
             {initialItems.map((item) => (
-              <tr key={item.id} className={item.id % 2 === 0 ? 'bg-gray-50' : ''}>
+              <tr
+                key={item.id}
+                className={item.id % 2 === 0 ? "bg-gray-50" : ""}
+              >
                 <td className="px-4 py-2 border-b">{item.name}</td>
                 <td className="px-4 py-2 border-b">{item.code}</td>
-                <td className="px-4 py-2 border-b text-right">{item.quantity}</td>
-                <td className="px-4 py-2 border-b text-right">{item.orderRemaining}</td>
-                <td className="px-4 py-2 border-b text-right">{item.allocated}</td>
-                <td className="px-4 py-2 border-b text-right">{item.unitPrice}</td>
+                <td className="px-4 py-2 border-b text-right">
+                  {item.quantity}
+                </td>
+                <td className="px-4 py-2 border-b text-right">
+                  {item.orderRemaining}
+                </td>
+                <td className="px-4 py-2 border-b text-right">
+                  {item.allocated}
+                </td>
+                <td className="px-4 py-2 border-b text-right">
+                  {item.unitPrice}
+                </td>
                 <td className="px-4 py-2 border-b text-right">{item.amount}</td>
                 <td className="px-4 py-2 border-b text-right">{item.tax}</td>
                 <td className="px-4 py-2 border-b text-right">{item.stock}</td>

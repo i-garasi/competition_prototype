@@ -1,6 +1,7 @@
-import React from 'react';
+import React from "react";
 
-interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
+interface InputFieldProps
+  extends React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
   label?: string;
   name: string;
   required?: boolean;
@@ -20,7 +21,7 @@ export function InputField({
   helperText,
   multiline,
   rows = 3,
-  labelWidth = 'w-1/4',
+  labelWidth = "w-1/4",
   hideLabel = false,
   ...props
 }: InputFieldProps) {
@@ -31,12 +32,15 @@ export function InputField({
     <div>
       <div className="flex items-center">
         {!hideLabel && label && (
-          <label htmlFor={name} className={`text-sm font-medium text-gray-700 ${labelWidth}`}>
+          <label
+            htmlFor={name}
+            className={`text-sm font-medium text-gray-700 ${labelWidth}`}
+          >
             {label}
             {required && <span className="text-red-500 ml-1">*</span>}
           </label>
         )}
-        <div className="relative w-full">
+        <div className="relative w-full pl-1">
           {multiline ? (
             <textarea
               id={name}
@@ -62,9 +66,7 @@ export function InputField({
           )}
         </div>
       </div>
-      {helperText && (
-        <p className="mt-1 text-sm text-gray-500">{helperText}</p>
-      )}
+      {helperText && <p className="mt-1 text-sm text-gray-500">{helperText}</p>}
     </div>
   );
 }
