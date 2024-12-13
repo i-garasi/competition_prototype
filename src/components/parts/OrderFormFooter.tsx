@@ -3,7 +3,7 @@ import { InputField } from "../ui/InputField";
 
 export default function OrderFormFooter() {
   return (
-    <div className="space-y-4">
+    <div className="space-y-2">
       <div className="grid grid-cols-12 gap-4 items-center">
         <div className="col-span-2">
           <InputField

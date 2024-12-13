@@ -20,7 +20,7 @@ export default function PartsOrderPage() {
           <div className="text-sm text-gray-500">処理日: 2015/04/23</div>
         </div>
 
-        <form onSubmit={handleSubmit} className="p-6 space-y-6">
+        <form onSubmit={handleSubmit} className="p-6 space-y-4">
           <OrderFormHeader />
           <OrderFormDetails />
           <OrderFormDelivery />

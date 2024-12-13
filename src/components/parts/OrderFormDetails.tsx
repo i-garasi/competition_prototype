@@ -3,8 +3,8 @@ import { InputField } from '../ui/InputField';
 
 export default function OrderFormDetails() {
   return (
-    <div className="space-y-4">
-      <div className="grid grid-cols-1 gap-4">
+    <div className="space-y-2">
+      <div className="grid grid-cols-1 gap-2">
         <div className="flex gap-2 items-end">
           <InputField
             label="納入先"
