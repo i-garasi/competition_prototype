@@ -109,7 +109,7 @@ export default function Sidebar() {
         <h1 className="text-xl font-bold text-gray-800">
           <div className="flex items-center">
             <img
-              src="/src/assets/logo_single.png"
+              src="/public/assets/logo_single.png"
               alt="ロゴ"
               className="h-8 w-8 mr-2"
             />
