@@ -19,13 +19,13 @@ export function FunctionKey({ label, shortcut, onClick, disabled = false }: Func
         border border-gray-300 rounded
         ${disabled
           ? 'bg-gray-100 text-gray-400'
-          : 'bg-white text-gray-700 hover:bg-gray-50 active:bg-gray-100'
+          : 'text-white bg-blue-500 hover:bg-blue-600 active:bg-blue-700'
         }
         transition-colors duration-150
       `}
     >
       <span className="text-sm">{label}</span>
-      <span className="text-xs text-gray-500">({shortcut})</span>
+      <span className="text-xs text-white">({shortcut})</span>
     </button>
   );
 }

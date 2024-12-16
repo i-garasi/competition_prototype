@@ -5,13 +5,13 @@ interface OrderItem {
   id: number;
   name: string;
   code: string;
-  quantity: number;
-  orderRemaining: number;
-  allocated: number;
-  unitPrice: number;
-  amount: number;
-  tax: number;
-  stock: number;
+  quantity: number | null;
+  orderRemaining: number | null;
+  allocated: number | null;
+  unitPrice: number | null;
+  amount: number | null;
+  tax: number | null;
+  stock: number | null;
   changeInfo: string;
   model: string;
 }
@@ -49,13 +49,13 @@ const initialItems: OrderItem[] = [
     id: 3,
     name: "",
     code: "",
-    quantity: 0,
-    orderRemaining: 0,
-    allocated: 0,
-    unitPrice: 0,
-    amount: 0,
-    tax: 0,
-    stock: 0,
+    quantity: null,
+    orderRemaining: null,
+    allocated: null,
+    unitPrice: null,
+    amount: null,
+    tax: null,
+    stock: null,
     changeInfo: "",
     model: "",
   },
@@ -103,7 +103,7 @@ export default function OrderFormItems() {
                     label="数量"
                     id="quantity"
                     name="quantity"
-                    defaultValue={item.quantity}
+                    defaultValue={item.quantity !== null ? item.quantity : null}
                     inputWidth="w-[32px]"
                     required={false}
                     hideLabel

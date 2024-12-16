@@ -14,8 +14,8 @@ export default function OrderFormActions() {
       <FunctionKey label="複写" shortcut="F8" onClick={() => {}} />
       <FunctionKey label="" shortcut="F9" onClick={() => {}} />
       <FunctionKey label="" shortcut="F10" onClick={() => {}} />
-      <FunctionKey label="" shortcut="F11" onClick={() => {}} />
-      <FunctionKey label="クリア" shortcut="F12" onClick={() => {}} />
+      <FunctionKey label="クリア" shortcut="F11" onClick={() => {}} />
+      <FunctionKey label="戻る" shortcut="F12" onClick={() => {}} />
     </div>
   );
 }
