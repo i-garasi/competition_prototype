@@ -3,7 +3,7 @@ import { FunctionKey } from "../ui/FunctionKey";
 
 export default function OrderFormActions() {
   return (
-    <div className="flex gap-1 border-t pt-4">
+    <div className="flex gap-2 border-t pt-4">
       <FunctionKey label="登録" shortcut="F1" onClick={() => {}} />
       <FunctionKey label="参照" shortcut="F2" onClick={() => {}} />
       <FunctionKey label="行追加" shortcut="F3" onClick={() => {}} />

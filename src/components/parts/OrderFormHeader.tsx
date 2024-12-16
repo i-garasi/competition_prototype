@@ -23,7 +23,7 @@ const shippingPoints = [
 export default function OrderFormHeader() {
   return (
     <>
-      <div className="grid grid-cols-12 items-center gap-3">
+      <div className="grid grid-cols-12 items-center gap-4">
         <div className="col-span-3">
           <InputField
             label="受注番号"
