@@ -24,7 +24,7 @@ export default function PartsMenuPage() {
 
   return (
     <div className="max-w-7xl mx-auto p-6">
-      <h1 className="text-2xl font-semibold text-gray-900 mb-6">部品メニュー</h1>
+      <h1 className="text-2xl font-semibold text-gray-900 mb-6">部品メニュー2</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {menuItems.map((item) => (
           <button
