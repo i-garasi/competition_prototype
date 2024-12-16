@@ -53,6 +53,7 @@ export default function OrderFormDelivery() {
               label="運賃内容"
               name="freightContent"
               labelWidth="w-[120px]"
+              inputWidth="w-[110px]"
               required
               options={[
                 { value: "1", label: "1: 立替" },
@@ -64,6 +65,7 @@ export default function OrderFormDelivery() {
               label="運賃内容"
               name="freightContent"
               labelWidth="w-[120px]"
+              inputWidth="w-[110px]"
               required
               options={[
                 { value: "1", label: "1: 立替" },

@@ -20,6 +20,7 @@ export function SelectField({
   options,
   required,
   labelWidth = 'w-1/4',
+  inputWidth = "w-full",
   hideLabel = false,
   className = '',
   ...props
@@ -35,7 +36,7 @@ export function SelectField({
       <select
         id={name}
         name={name}
-        className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+        className={`block rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm ${inputWidth}`}
         {...props}
       >
         <option value="">選択してください</option>
