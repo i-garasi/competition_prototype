@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
-import { useAuthStore } from '../stores/authStore';
-import { LogIn } from 'lucide-react';
+import React, { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
+import { useAuthStore } from "../stores/authStore";
 
 export default function LoginPage() {
-  const [userId, setUserId] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [userId, setUserId] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
   const { login, isAuthenticated } = useAuthStore();
 
@@ -18,9 +17,9 @@ export default function LoginPage() {
     e.preventDefault();
     try {
       await login(userId, password);
-      navigate('/parts/menu');
+      navigate("/parts/menu");
     } catch (err) {
-      setError('ログインに失敗しました。');
+      setError("ログインに失敗しました。");
     }
   };
 
@@ -29,7 +28,11 @@ export default function LoginPage() {
       <div className="max-w-md w-full space-y-8">
         <div>
           <div className="flex justify-center">
-            <LogIn className="h-12 w-12 text-blue-600" />
+            <img
+              src="/src/assets/yamamoto_logo.png"
+              alt="LogIn Icon"
+              className="h-32 w-32"
+            />
           </div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
             販売管理システム
