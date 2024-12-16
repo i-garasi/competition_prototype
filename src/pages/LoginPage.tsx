@@ -29,7 +29,7 @@ export default function LoginPage() {
         <div>
           <div className="flex justify-center">
             <img
-              src="/public/assets/yamamoto_logo.png"
+              src="/yamamoto_logo.png"
               alt="LogIn Icon"
               className="h-32 w-32"
             />
