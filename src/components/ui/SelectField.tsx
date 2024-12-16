@@ -11,6 +11,7 @@ interface SelectFieldProps extends React.SelectHTMLAttributes<HTMLSelectElement>
   options: Option[];
   required?: boolean;
   labelWidth?: string;
+  inputWidth?: string;
   hideLabel?: boolean;
 }
 

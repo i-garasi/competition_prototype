@@ -10,6 +10,7 @@ interface InputFieldProps
   multiline?: boolean;
   rows?: number;
   labelWidth?: string;
+  inputWidth?: string;
   hideLabel?: boolean;
 }
 
@@ -22,6 +23,7 @@ export function InputField({
   multiline,
   rows = 3,
   labelWidth = "w-1/4",
+  inputWidth = "w-full",
   hideLabel = false,
   ...props
 }: InputFieldProps) {
@@ -40,7 +42,7 @@ export function InputField({
             {required && <span className="text-red-500 ml-1">*</span>}
           </label>
         )}
-        <div className="relative w-full pl-1">
+        <div className={`relative pl-1 ${inputWidth}`}>
           {multiline ? (
             <textarea
               id={name}

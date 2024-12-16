@@ -1,4 +1,5 @@
 import React from "react";
+import { InputField } from "../ui/InputField";
 
 interface OrderItem {
   id: number;
@@ -87,9 +88,26 @@ export default function OrderFormItems() {
                 className={item.id % 2 === 0 ? "bg-gray-50" : ""}
               >
                 <td className="px-4 py-2 border-b">{item.name}</td>
-                <td className="px-4 py-2 border-b">{item.code}</td>
+                <td className="px-4 py-2 border-b">
+                  <InputField
+                    label="部品コード"
+                    id="partsCode"
+                    name="partsCode"
+                    defaultValue={item.code}
+                    required={false}
+                    hideLabel
+                  />
+                </td>
                 <td className="px-4 py-2 border-b text-right">
-                  {item.quantity}
+                  <InputField
+                    label="数量"
+                    id="quantity"
+                    name="quantity"
+                    defaultValue={item.quantity}
+                    inputWidth="w-[32px]"
+                    required={false}
+                    hideLabel
+                  />
                 </td>
                 <td className="px-4 py-2 border-b text-right">
                   {item.orderRemaining}
