@@ -54,8 +54,8 @@ export default function OrderFormDelivery() {
             <SelectField
               label="運賃内容"
               name="freightContent"
-              labelWidth="w-[120px]"
-              inputWidth="w-[110px]"
+              labelWidth="w-[80px]"
+              inputWidth="w-[130px]"
               required
               options={[
                 { value: "1", label: "1: 立替" },
@@ -67,7 +67,7 @@ export default function OrderFormDelivery() {
               label="運賃内容"
               name="freightContent"
               labelWidth="w-[120px]"
-              inputWidth="w-[110px]"
+              inputWidth="w-[130px]"
               required
               options={[
                 { value: "1", label: "1: 立替" },
@@ -77,15 +77,6 @@ export default function OrderFormDelivery() {
               hideLabel
             />
           </div>
-        </div>
-        <div className="col-span-2">
-          <InputField
-            label="立替運賃"
-            name="freightCost"
-            labelWidth="w-[100px]"
-            textAlign="text-right"
-            defaultValue="0"
-          />
         </div>
         <div className="col-span-3">
           <SelectField
@@ -132,6 +123,38 @@ export default function OrderFormDelivery() {
             labelWidth="w-[100px]"
           />
         </div>
+      </div>
+
+      <div className="grid grid-cols-12 gap-4 items-end">
+        <div className="col-span-2">
+          <InputField
+            label="立替運賃"
+            name="freightCost"
+            labelWidth="w-[100px]"
+            textAlign="text-right"
+            defaultValue="0"
+          />
+        </div>
+        <div className="col-span-2">
+          <InputField
+            label="数量"
+            name="freightQuantity"
+            labelWidth="w-[40px]"
+            textAlign="text-right"
+            defaultValue="0"
+          />
+        </div>
+        <div className="col-span-1 text-center">×</div>
+        <div className="col-span-2">
+          <InputField
+            label="単価"
+            name="freightPrice"
+            labelWidth="w-[40px]"
+            textAlign="text-right"
+            defaultValue="0"
+          />
+        </div>
+        <div className="col-span-3 text-sm">※数量×単価は保存されません</div>
       </div>
     </div>
   );
