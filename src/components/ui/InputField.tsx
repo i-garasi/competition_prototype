@@ -11,6 +11,7 @@ interface InputFieldProps
   rows?: number;
   labelWidth?: string;
   inputWidth?: string;
+  textAlign?: string;
   hideLabel?: boolean;
 }
 
@@ -24,6 +25,7 @@ export function InputField({
   rows = 3,
   labelWidth = "w-1/4",
   inputWidth = "w-full",
+  textAlign = "text-left",
   hideLabel = false,
   ...props
 }: InputFieldProps) {
@@ -56,7 +58,7 @@ export function InputField({
               <input
                 id={name}
                 name={name}
-                className={`${inputClasses} ${suffix ? "rounded-r-none" : ""}`}
+                className={`${inputClasses} ${suffix ? "rounded-r-none" : ""} ${textAlign}`}
                 {...props}
               />
               {suffix && (

@@ -11,6 +11,7 @@ export default function OrderFormFooter() {
             name="subtotal"
             defaultValue="6,937"
             labelWidth="w-[100px]"
+            textAlign="text-right"
             disabled
           />
         </div>
@@ -20,20 +21,27 @@ export default function OrderFormFooter() {
             name="tax"
             defaultValue="694"
             labelWidth="w-[80px]"
+            textAlign="text-right"
             disabled
           />
         </div>
-        <div className="col-span-2 flex items-center">
-          <span className="text-sm">税率</span>
-          <span className="ml-2">0.10</span>
+        <div className="col-span-2">
+          <InputField
+            label="税率"
+            name="taxRate"
+            defaultValue="0.10"
+            labelWidth="w-[80px]"
+            textAlign="text-right"
+            disabled
+          />
         </div>
-
         <div className="col-span-2">
           <InputField
             label="税込売上"
             name="totalWithTax"
             defaultValue="7,631"
             labelWidth="w-[100px]"
+            textAlign="text-right"
             disabled
           />
         </div>
@@ -43,6 +51,7 @@ export default function OrderFormFooter() {
             name="codFee"
             defaultValue="0"
             labelWidth="w-[130px]"
+            textAlign="text-right"
             disabled
           />
         </div>
@@ -52,6 +61,7 @@ export default function OrderFormFooter() {
             name="grandTotal"
             defaultValue="7,631"
             labelWidth="w-[80px]"
+            textAlign="text-right"
             disabled
           />
         </div>

@@ -42,6 +42,8 @@ export default function OrderFormDelivery() {
             required
             defaultValue="70"
             suffix="%"
+            inputWidth="w-[80px]"
+            textAlign="text-right"
           />
         </div>
       </div>
@@ -81,6 +83,7 @@ export default function OrderFormDelivery() {
             label="立替運賃"
             name="freightCost"
             labelWidth="w-[100px]"
+            textAlign="text-right"
             defaultValue="0"
           />
         </div>

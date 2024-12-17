@@ -51,9 +51,10 @@ export default function OrderFormHeader() {
               label="担当者コード"
               id="representativeCode"
               name="representativeCode"
-              labelWidth="w-[170px]"
               required
               defaultValue="1408"
+              labelWidth="w-[100px]"
+              inputWidth="w-[70px]"
             />
             <button className="px-2 py-1 bg-gray-100 rounded text-sm h-[26px]">
               検索

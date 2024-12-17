@@ -94,6 +94,7 @@ export default function OrderFormItems() {
                     id="partsCode"
                     name="partsCode"
                     defaultValue={item.code}
+                    textAlign="text-right"
                     required={false}
                     hideLabel
                   />
@@ -105,6 +106,7 @@ export default function OrderFormItems() {
                     name="quantity"
                     defaultValue={item.quantity !== null ? item.quantity : null}
                     inputWidth="w-[32px]"
+                    textAlign="text-right"
                     required={false}
                     hideLabel
                   />
