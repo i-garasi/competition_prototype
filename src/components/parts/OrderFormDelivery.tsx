@@ -30,7 +30,6 @@ export default function OrderFormDelivery() {
             label="指図書単価表示"
             name="priceDisplay"
             labelWidth="w-[210px]"
-            required
             options={[{ value: "1", label: "1: 表示" }]}
             defaultValue="1"
           />
@@ -57,10 +56,7 @@ export default function OrderFormDelivery() {
               labelWidth="w-[80px]"
               inputWidth="w-[130px]"
               required
-              options={[
-                { value: "1", label: "1: 立替" },
-                { value: "2", label: "2: 送付" },
-              ]}
+              options={[{ value: "1", label: "1: 立替" }]}
               defaultValue="1"
             />
             <SelectField
@@ -69,11 +65,8 @@ export default function OrderFormDelivery() {
               labelWidth="w-[120px]"
               inputWidth="w-[130px]"
               required
-              options={[
-                { value: "1", label: "1: 立替" },
-                { value: "2", label: "2: 送付" },
-              ]}
-              defaultValue="2"
+              options={[{ value: "1", label: "1: 送付" }]}
+              defaultValue="1"
               hideLabel
             />
           </div>
@@ -137,11 +130,11 @@ export default function OrderFormDelivery() {
         </div>
         <div className="col-span-2">
           <InputField
-            label="数量"
+            label="（数量"
             name="freightQuantity"
-            labelWidth="w-[40px]"
+            labelWidth="w-[60px]"
             textAlign="text-right"
-            defaultValue="0"
+            defaultValue="1"
           />
         </div>
         <div className="col-span-1 text-center">×</div>
@@ -151,10 +144,9 @@ export default function OrderFormDelivery() {
             name="freightPrice"
             labelWidth="w-[40px]"
             textAlign="text-right"
-            defaultValue="0"
           />
         </div>
-        <div className="col-span-3 text-sm">※数量×単価は保存されません</div>
+        <div className="col-span-3 text-sm">）※数量×単価は保存されません</div>
       </div>
     </div>
   );

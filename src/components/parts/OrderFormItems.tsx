@@ -12,14 +12,13 @@ interface OrderItem {
   amount: number | null;
   tax: number | null;
   stock: number | null;
-  changeInfo: string;
   model: string;
 }
 
 const initialItems: OrderItem[] = [
   {
     id: 1,
-    name: "スプリング付片",
+    name: "スプリング掛け",
     code: "11108120D100",
     quantity: 1,
     orderRemaining: 1,
@@ -27,13 +26,12 @@ const initialItems: OrderItem[] = [
     unitPrice: 91,
     amount: 91,
     tax: 7,
-    stock: 50,
-    changeInfo: "変更なし",
-    model: "ABC-123",
+    stock: null,
+    model: "",
   },
   {
     id: 2,
-    name: "カバーとスペーサー付",
+    name: "カバー上Aマーク付",
     code: "M111552620101",
     quantity: 1,
     orderRemaining: 1,
@@ -41,9 +39,8 @@ const initialItems: OrderItem[] = [
     unitPrice: 6846,
     amount: 6846,
     tax: 546,
-    stock: 25,
-    changeInfo: "変更なし",
-    model: "XYZ-789",
+    stock: null,
+    model: "",
   },
   {
     id: 3,
@@ -56,7 +53,6 @@ const initialItems: OrderItem[] = [
     amount: null,
     tax: null,
     stock: null,
-    changeInfo: "",
     model: "",
   },
 ];
@@ -76,8 +72,7 @@ export default function OrderFormItems() {
               <th className="px-4 py-2 border-b text-right">単価</th>
               <th className="px-4 py-2 border-b text-right">金額</th>
               <th className="px-4 py-2 border-b text-right">消費税</th>
-              <th className="px-4 py-2 border-b text-right">在庫</th>
-              <th className="px-4 py-2 border-b text-left">変更情報</th>
+              <th className="px-4 py-2 border-b text-right">在庫・変更情報</th>
               <th className="px-4 py-2 border-b text-left">機種</th>
             </tr>
           </thead>
@@ -94,7 +89,6 @@ export default function OrderFormItems() {
                     id="partsCode"
                     name="partsCode"
                     defaultValue={item.code}
-                    textAlign="text-right"
                     required={false}
                     hideLabel
                   />
@@ -123,7 +117,6 @@ export default function OrderFormItems() {
                 <td className="px-4 py-2 border-b text-right">{item.amount}</td>
                 <td className="px-4 py-2 border-b text-right">{item.tax}</td>
                 <td className="px-4 py-2 border-b text-right">{item.stock}</td>
-                <td className="px-4 py-2 border-b">{item.changeInfo}</td>
                 <td className="px-4 py-2 border-b">{item.model}</td>
               </tr>
             ))}

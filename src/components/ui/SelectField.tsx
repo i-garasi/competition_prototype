@@ -40,7 +40,7 @@ export function SelectField({
         className={`block border-b border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm ${inputWidth}`}
         {...props}
       >
-        <option value="">選択してください</option>
+        <option value=""></option>
         {options.map((option) => (
           <option key={option.value} value={option.value}>
             {option.label}

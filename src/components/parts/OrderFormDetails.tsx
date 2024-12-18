@@ -14,7 +14,7 @@ export default function OrderFormDetails() {
             defaultValue="01660"
           />
           <button className="px-2 py-1 bg-gray-100 rounded text-sm h-[26px]">検索</button>
-          <span className="text-sm">㈱サザキ硝材ラボ2</span>
+          <span className="text-sm">㈱ササキ機械テスト2</span>
         </div>
         <div className="flex gap-2 items-end">
           <InputField
@@ -25,7 +25,7 @@ export default function OrderFormDetails() {
             defaultValue="01660"
           />
           <button className="px-2 py-1 bg-gray-100 rounded text-sm h-[26px]">検索</button>
-          <span className="text-sm">㈱サザキ硝材ラボ2</span>
+          <span className="text-sm">㈱ササキ機械テスト2</span>
         </div>
         <div className="flex gap-2 items-end">
           <InputField
@@ -36,7 +36,7 @@ export default function OrderFormDetails() {
             defaultValue="01660"
           />
           <button className="px-2 py-1 bg-gray-100 rounded text-sm h-[26px]">検索</button>
-          <span className="text-sm">㈱サザキ硝材ラボ2</span>
+          <span className="text-sm">㈱ササキ機械テスト2</span>
         </div>
       </div>
     </div>

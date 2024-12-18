@@ -3,9 +3,9 @@ import { SelectField } from "../ui/SelectField";
 import { InputField } from "../ui/InputField";
 
 const orderMethods = [
-  { value: "1", label: "電話" },
-  { value: "2", label: "FAX" },
-  { value: "3", label: "メール" },
+  { value: "1", label: "1: 電話" },
+  { value: "2", label: "2: FAX" },
+  { value: "3", label: "3: メール" },
 ];
 
 const offices = [

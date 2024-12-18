@@ -7,10 +7,11 @@ export default function OrderFormFooter() {
       <div className="grid grid-cols-12 gap-4 items-center">
         <div className="col-span-2">
           <InputField
-            label="税抜売上"
+            label="今回出荷分の売上"
             name="subtotal"
             defaultValue="6,937"
-            labelWidth="w-[100px]"
+            labelWidth="w-[170px]"
+            inputWidth="w-[70px]"
             textAlign="text-right"
             disabled
           />
@@ -85,6 +86,7 @@ export default function OrderFormFooter() {
             name="specialSalesReason"
             multiline
             rows={1}
+            disabled
           />
         </div>
 
